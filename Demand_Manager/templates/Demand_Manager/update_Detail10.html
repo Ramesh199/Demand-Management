@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GAVS Demand Manager</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+ 
+  <link rel="stylesheet" type="text/css" href="{% static '/css/materialize_custom.css' %}">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   
+</head>
+<body>
+{%  include 'Demand_Manager/navbar.html' %}
+{% include 'Demand_Manager/messages.html' %}
+<br>
+	       <h6 style="color:black" align:centre><strong>Update Demand Details</strong></h6></div>
+          <div class="form-group row">
+            <form method="POST">
+              {% csrf_token %}
+              {% for field in form %}
+            
+              <label for="id_{{ field.name }}" class="col-2 col-form-label"><strong>{{ field.label }}:<br>  {{ field }}</strong></label>
+              
+              {% endfor %}
+              
+                <div class="offset-sm-2 col-sm-6">
+        	         <button type="submit" class="btn btn-primary" href="/inprogress_noupdates/">Update</button> 
+                    <a class="btn btn-warning" href="/inprogress_noupdates/">Cancel</a>
+                </div>
+              
+            </form>
+          </div>
+      
+
+

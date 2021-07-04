@@ -1,0 +1,48 @@
+
+body{
+		background-color: #ebeff5;
+	}
+
+	
+	#Table-BG{
+		background-color: #ebeff5;
+		color: dark-grey;
+		text-align-last: center;
+	}
+
+	.mytable2{
+		width:100%; font-size:14px;
+		border:0px solid #ccc;
+	}
+	.mytable{
+		width:100%; font-size:13px;
+		border:0px solid #ccc;
+	}
+	div.tools{ margin:0px; }
+	div.tools input{ background-color:#0892E1; border:0px outset #f4f4f4; margin:0px; }
+	th{ background-color:#0B68BB; color:white; padding:2px; border:1px solid #ccc; text-align-last: left;}
+	td{ background-color:#ebeff5; padding:2px; border-bottom:1px solid #ccc; border-right:1px solid #ccc; border:1px; vertical-align: text-top; text-align-last: left; color:black;}
+
+	.dropdown .dropdown-menu
+	{
+	  
+	  background-color: #ebeff5;
+	  
+	  
+	}
+	.dropdown .dropdown-menu a:hover
+	{
+	  color: white;
+	  background-color: #0B68BB;
+	  border-color: #003366;
+	  display: block;
+	}
+
+
+	.navbar {
+  	position: fixed;
+  	z-index: 9999;
+  	line-height: 25px;
+    height: 60px;
+    background-color: #4CAF50
+	}

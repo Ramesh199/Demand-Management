@@ -1,0 +1,40 @@
+{% load static %}
+<div class="col-3">
+	
+		<div class="card text-left text-brown" id="Table-BG">
+			
+		  		<div class="title"><strong>Hiring Summary by status</strong></div>
+		    	<table id="table9" class="mytable2" > 
+		    	<thead>
+		        <tr>
+			        <th>Hiring Status</th>
+			        <th>Total</th>
+		      	</tr>
+		      
+		    	</thead>
+		
+		    	<tbody>
+
+		      	{% for rows in By_Detailed_Status_dict %}
+				
+
+		      	<tr>
+			        <td>{{ rows.Detailed_Status }}</td>
+			        <td>{{ rows.total }}</td>
+
+		      	</tr>
+
+		      	{% endfor %}
+
+		      	{% for grow in By_Gtotal_dict %}
+		      	
+		      		<td>{{ "Grand Total" }}</td>
+		      		<td>{{ grow.gtotal }}</td>
+		      		{% endfor %}
+		    	</tbody>
+
+		  		</table>
+		</div>
+	
+</div>
+

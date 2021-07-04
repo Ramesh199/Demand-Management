@@ -1,0 +1,62 @@
+{%  extends 'Demand_Manager/Header.html' %}
+
+{% block content %}
+{% include 'Demand_Manager/messages.html' %}
+<div class="row">
+
+    <div class="col-md">
+      		
+	<div class="card text-left text-brown bg-light" id="Table-BG">
+	<div class="card-header">
+{% include "Demand_Manager/search.html" %}  
+
+	<div class="title"><strong><h5>In Progress demands with no updates more than 10 business days</h5></strong></div>
+
+			<table class="mytable">
+				<thead>
+				<tr>
+					<th>Demand Id</th>
+			        <th>Requested Date</th>
+			        <th>Days Open</th>
+			        <th>Demand Status</th>
+			        <th>Portfolio</th>
+			        <th>Portfolio Lead</th>
+			        <th>Hiring Manager</th>
+			        <th>Project</th>
+			        <th>Role</th>
+			        <th>Skillset</th>
+			        <th>Location</th>
+			        <th>Onshore Replacement Flag</th>
+			        <th>Expected Start Date</th>
+			        <th>Detailed Status</th>
+			        <th>Last Updated Date</th>
+				</tr>
+				</thead>
+				<tbody>
+				{% for rows in Demand_Noupdates_Dict %}
+
+					<tr>
+					<td><a href="{{rows.id}}/update_detail10/">{{ rows.Demand_Id }}</a></td>
+			        <td>{{ rows.Requested_Date }}</td>
+
+			        <td style="background-color:#FF0000  text-center"> {{ rows.Days_Open }} </td>
+			        <td>{{ rows.Demand_Status }}</td>
+			        
+			        <td>{{ rows.Portfolio}}</td>
+			        <td>{{ rows.Portfolio_Lead}}</td>
+			        <td>{{ rows.Hiring_Manager}}</td>
+			        <td>{{ rows.Project}}</td>
+			        <td>{{ rows.Role}}</td>
+			        <td>{{ rows.Skillset}}</td>
+			        <td>{{ rows.Location}}</td>
+			        <td>{{ rows.Onshore_Replacement_Flag}}</td>
+			        <td>{{ rows.Expected_Start_Date}}</td>
+			        <td>{{ rows.Detailed_Status}}</td>
+			        <td>{{ rows.Log_Date}}</td>
+					</tr>
+				</tbody>
+				{% endfor %}
+			</table>
+		
+
+{% endblock %}

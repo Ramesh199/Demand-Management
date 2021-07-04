@@ -1,0 +1,23 @@
+{%  extends 'Demand_Manager/Header.html' %}
+
+{% block content %}
+<br><br><br>
+
+{% include 'Demand_Manager/messages.html' %}
+<div class="row">
+
+	
+	{% include "Demand_Manager/openpositionschart.html" %} 	
+
+	{% include "Demand_Manager/hiringsummary.html" %} 
+
+	{% include "Demand_Manager/lastweekinterviewed.html" %}
+<div class="row">
+	{% include "Demand_Manager/lastweekselected.html" %}  
+
+    {% include "Demand_Manager/lastweekstarted.html" %} 
+</div>
+
+
+{% endblock %}
+

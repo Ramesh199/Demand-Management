@@ -1,0 +1,43 @@
+{% load static %}
+<div class="col-5">
+	
+		<div class="card text-left text-brown  mb-3" id="Table-BG">
+			<div class="title"><strong>Candidates interviewed last week</strong></div>
+			<table id="table9" class="mytable2" > 
+		    <thead>
+		      <tr>
+		        <th>Position_Id</th>
+		        <th>Interview Date</th>
+		        <th>Days Open</th>
+		        <th>Candidate</th>
+		        <th>Location</th>
+		        <th>Hiring Manager</th>
+		        <th>Feedback</th>
+		        
+		      </tr>
+		      
+		    </thead>
+		
+		    <tbody>
+
+		      {% for rows in Demand_Wk_Interviewed_dict %}
+			
+		      <tr>
+		        <td>{{ rows.Demand_Id }}</td>
+		        <td>{{ rows.Log_Date }} </td>
+		        <td>{{ rows.Days_Open }}</td>
+		        <td>{{ rows.Candidate }}</td>
+		        <td>{{ rows.Location }}</td>
+		        <td>{{ rows.Hiring_Manager }}</td>
+		        <td>{{ rows.Client_Feedback }}</td>
+		      </tr>
+
+		      {% endfor %}
+		      
+		    </tbody>
+
+		  	</table>
+			  	
+		</div>
+	
+</div>

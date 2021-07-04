@@ -1,0 +1,46 @@
+{% load static %}
+<div class="col 7">
+	<div class="col-md">
+		<div class="card text-left text-brown  mb-3" id="Table-BG">
+		<div class="title"><strong>Candidates Started Last Week </strong></div>
+			<table id="table9" class="mytable2" >	 
+			    <thead>
+			 
+			      <tr>
+			        
+			        <th>Position_Id</th>
+			        <th>Role</th>
+			        <th>Location</th>
+			        <th>Hiring Manager</th>
+			        <th>Start_Date</th>
+			        <th>Candidate Name</th>
+			        
+			      </tr>
+			      
+			    </thead>
+			
+			    <tbody>
+
+			      {% for rows in Demand_Wk_Started_dict %}
+				
+			      <tr>
+			        
+			        <td>{{ rows.Demand_Id }}</td>
+			        <td>{{ rows.Skillset }}</td>
+			        <td>{{ rows.Location }}</td>
+			        <td>{{ rows.Hiring_Manager }}</td>
+			        <td>{{ rows.Actual_Start_Date }}</td>
+			        <td>{{ rows.Candidate }}</td>
+			        
+			      
+			      </tr>
+
+			      {% endfor %}
+			      
+			    </tbody>
+
+  		  	</table>
+  		<br>
+</div>
+</div>
+</div>

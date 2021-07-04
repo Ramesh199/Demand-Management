@@ -1,0 +1,56 @@
+{%  extends 'Demand_Manager/Header.html' %}
+
+{% block content %}
+{% include 'Demand_Manager/messages.html' %}
+<div class="row">
+
+    <div class="col-md">
+      		
+	<div class="card text-left text-brown bg-light" id="Table-BG">
+	<div class="card-header">
+{% include "Demand_Manager/search.html" %}  
+
+	<div class="title"><strong><h5>On-board's In Progress</h5></strong></div>
+
+			<table class="mytable">
+				<thead>
+				<tr>
+					
+			        <th>Requested Date</th>
+			        <th>Demand Status</th>
+			        <th>Demand Id</th>
+			        <th>Portfolio</th>
+			        <th>Portfolio Lead</th>
+			        <th>Hiring Manager</th>
+			        <th>Project</th>
+			        <th>Role</th>
+			        <th>Skillset</th>
+			        <th>Location</th>
+			        <th>Candidate</th>
+			        <th>Days Open</th>
+				</tr>
+				</thead>
+				<tbody>
+				{% for rows in Onboard_Inprogress_Dict %}
+
+					<tr>
+					
+			        <td>{{ rows.Requested_Date }}</td>
+					<td>{{ rows.Demand_Status }}</td>
+			        <td>{{ rows.Demand_Id }}</td>
+			        <td>{{ rows.Portfolio }}</td>
+			        <td>{{ rows.Portfolio_Lead }}</td>
+			        <td>{{ rows.Hiring_Manager }}</td>
+			        <td>{{ rows.Project }}</td>
+			        <td>{{ rows.Role }}</td>
+			        <td>{{ rows.Skillset }}</td>
+			        <td>{{ rows.Location }}</td>
+			        <td>{{ rows.Candidate }}</td>
+			         <td style="background-color:grey  text-center"> {{ rows.Days_Ageing }} </td>
+					</tr>
+				</tbody>
+				{% endfor %}
+			</table>
+		
+
+{% endblock %}
